@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/faq.css";
+import "../styles/perguntas.css";
 
 export default function Perguntas() {
     const perguntas = [

@@ -1,0 +1,66 @@
+.Page {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  background-color: #d2c1b6; /* fundo da seção */
+  font-family: "Segoe UI", sans-serif;
+  margin: 0%;
+}
+
+h2 {
+  text-align: center;
+  color: #1b3c53; /* cor principal escura */
+  margin-bottom: 25px;
+}
+
+.card {
+  background: #456882; /* card com cor de destaque */
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+  color: #d2c1b6; /* texto claro sobre card */
+  width: 75%;
+  max-width: 700px;
+}
+
+.card:hover {
+  background: #234c6a; /* hover com cor secundária */
+  transform: scale(1.01);
+}
+
+.pergunta {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.resposta {
+  margin-top: 8px;
+  background-color: rgba(
+    210,
+    193,
+    182,
+    0.5
+  ); /* fundo semi-transparente suave */
+  color: #1b3c53; /* texto escuro legível */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-radius: 8px;
+  padding: 8px;
+
+  /* animação de abrir/fechar */
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+}
+
+.categoria {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #d2c1b6; /* nota de rodapé clara sobre o card */
+  text-align: right;
+  font-style: italic;
+}
