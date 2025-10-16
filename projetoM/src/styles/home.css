@@ -134,7 +134,7 @@ h1 {
   color: #D2C1B6;
   font-size: 1.4rem;
   font-weight: 500;
-  letter-spacing: -0.01em;
+  letter-spacing: 0.03em;
 }
 
 .card p {
@@ -157,7 +157,4 @@ h1 {
     font-size: 2rem;
   }
 
-  .cards-grid {
-    grid-template-columns: 1fr;
-  }
 }
