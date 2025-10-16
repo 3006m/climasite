@@ -14,25 +14,28 @@ function Home() {
   ];
 
   return (
-    <div className="home-container">
-  
-      <main className="main-content">
-        <section className="hero-section">
-          <h1>Sistema de Monitoramento Climático</h1>
-          <p className="subtitle">
-            Monitoramento em tempo real de variáveis climáticas com tecnologia IoT
-          </p>
-        </section>
+<div className="home-container">
+      <div className="hero">
+        <div className="hero-overlay">
+          <main className="main-content">
+            <section className="hero-section">
+              <h1>Sistema de Monitoramento Climático</h1>
+              <p className="subtitle">
+                Monitoramento em tempo real de variáveis climáticas com tecnologia IoT
+              </p>
+            </section>
 
-        <section className="cards-grid">
-          {cards.map((card, index) => (
-            <Link to={card.path} className="card" key={index}>
-              <h3>{card.title}</h3>
-              <p>{card.description}</p>
-            </Link>
-          ))}
-        </section>
-      </main>
+            <section className="cards-grid">
+              {cards.map((card, index) => (
+                <Link to={card.path} className="card" key={index}>
+                  <h3>{card.title}</h3>
+                  <p>{card.description}</p>
+                </Link>
+              ))}
+            </section>
+          </main>
+        </div>
+      </div>
     </div>
   )
 }
