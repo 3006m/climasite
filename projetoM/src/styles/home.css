@@ -143,3 +143,11 @@
     font-size: 1.2rem;
   }
 }
+
+
+.blocoTextoHome{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 3em;
+}
