@@ -39,6 +39,7 @@
   select {
     background-color: #d2c1b6;
     margin-left: 1em;
+    border-radius: 10px;
   }
 }
 

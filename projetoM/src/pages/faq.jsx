@@ -255,7 +255,7 @@ export default function Perguntas() {
             <section className="Page">
                 <article className="Title">
 
-                    <h2>Perguntas e Respostas</h2>
+                    <h2>👾 Perguntas e Respostas</h2>
                     <div className="Select">
                         <h3>Selecione uma opção:</h3>
                         <select value={opcao} onChange={(e) => setOpcao(e.target.value)}>
