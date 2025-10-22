@@ -10,24 +10,22 @@ import img3 from "../assets/img3.jpeg";
 import img4 from "../assets/img4.jpeg";
 
 export default function Projeto() {
-      const [carrousel, setCarrousel] = useState(1)
+  const [carrousel, setCarrousel] = useState(1)
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCarrousel(carrousel => carrousel + 1)
-        if (carrousel >= 2) {
-          setCarrousel(0)
-        }
-      }, 2000);
-      return () => clearInterval(interval);
-    })
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarrousel(carrousel => carrousel + 1)
+      if (carrousel >= 2) {
+        setCarrousel(0)
+      }
+    }, 2000);
+    return () => clearInterval(interval);
+  })
 
   return (
     // O elemento main pode servir como contêiner principal para a página
     <main>
       <Navbar />
-
-
       <h1>A Solução</h1>
       <p>
         Para resolver esse problema, o projeto usa o ESP32 junto com os sensores
@@ -44,7 +42,7 @@ export default function Projeto() {
         mostrando como a tecnologia pode ajudar no dia a dia.
       </p>
       {/* SEÇÃO 1: O PROJETO */}
-    
+
       <section id="o-projeto">
         <h1 className="section-title">O Projeto</h1>
         <div className="content-section">
@@ -68,13 +66,13 @@ export default function Projeto() {
         </div>
       </section>
 
-  <div className='pictures'>
-      
-          {carrousel == 0 ? <img src={img2}  alt="carrouselFront" className="carimc" /> : ""}
-          {carrousel == 1 ? <img src={img3} alt="carrouselFront" className="carim" /> : ""}
-          {carrousel == 2 ? <img src={img4} alt="carrouselFront" className="carim" /> : ""}      
-        
-   </div>
+      <div className='pictures'>
+
+        {carrousel == 0 ? <img src={img2} alt="carrouselFront" className="carimc" /> : ""}
+        {carrousel == 1 ? <img src={img3} alt="carrouselFront" className="carim" /> : ""}
+        {carrousel == 2 ? <img src={img4} alt="carrouselFront" className="carim" /> : ""}
+
+      </div>
 
       {/* SEÇÃO 2: A SOLUÇÃO */}
 

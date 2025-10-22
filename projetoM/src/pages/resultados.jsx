@@ -50,30 +50,27 @@ com o ESP32, sensores e LEDs, além do monitoramento via MQTT.`
     return (
         <main>
             <Navbar />
+            <h1>🌎 Resultados e Aprendizados</h1>
 
-            <section>
-                <h1>🌎 Resultados e Aprendizados</h1>
+            {items.map((item, index) => (
+                <div
+                    key={index}
+                    className={`hardware-item ${index % 2 === 0 ? "normal" : "reversed"}`}
+                >
+                    {item.img && <img src={item.img} alt={item.title} />}
+                    {item.video && (
+                        <video controls>
+                            <source src={item.video} type="video/mp4" />
+                            Seu navegador não suporta o elemento de vídeo.
+                        </video>
+                    )}
 
-                {items.map((item, index) => (
-                    <div
-                        key={index}
-                        className={`hardware-item ${index % 2 === 0 ? "normal" : "reversed"}`}
-                    >
-                        {item.img && <img src={item.img} alt={item.title} />}
-                        {item.video && (
-                            <video controls>
-                                <source src={item.video} type="video/mp4" />
-                                Seu navegador não suporta o elemento de vídeo.
-                            </video>
-                        )}
-
-                        <div>
-                            <h2>{item.title}</h2>
-                            <p>{item.text}</p>
-                        </div>
+                    <div>
+                        <h2>{item.title}</h2>
+                        <p>{item.text}</p>
                     </div>
-                ))}
-            </section>
+                </div>
+            ))}
             <Footer />
         </main>
     );
