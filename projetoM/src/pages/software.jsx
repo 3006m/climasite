@@ -276,28 +276,31 @@ void loop() {
     <main>
       <Navbar />
       <h1>Componentes de Software</h1>
-      {items.map((item, index) => {
-        const lines = item.text.split("\n");
-        return (
-          <div
-            key={index}
-            className={`hardware-item ${index % 2 === 0 ? "" : "reversed"}`}
-          >
-            <div>
-              <h2>{item.title}</h2>
-              {lines.map((line, i) =>
-                line.trim().startsWith("•") ? (
-                  <ul key={i}>
-                    <li>{line.replace("•", "").trim()}</li>
-                  </ul>
-                ) : (
-                  <p key={i}>{line}</p>
-                )
-              )}
+      <section>
+
+        {items.map((item, index) => {
+          const lines = item.text.split("\n");
+          return (
+            <div
+              key={index}
+              className={`hardware-item ${index % 2 === 0 ? "" : "reversed"}`}
+            >
+              <div>
+                <h2>{item.title}</h2>
+                {lines.map((line, i) =>
+                  line.trim().startsWith("•") ? (
+                    <ul key={i}>
+                      <li>{line.replace("•", "").trim()}</li>
+                    </ul>
+                  ) : (
+                    <p key={i}>{line}</p>
+                  )
+                )}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
+      </section>
 
       <section className="code-section">
         <h1>Código Completo do Projeto</h1>
