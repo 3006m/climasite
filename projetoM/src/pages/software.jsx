@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/footer";
 import "../styles/css.css";
 
 export default function Software() {
