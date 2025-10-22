@@ -1,0 +1,122 @@
+/* projeto.css (Completo e Final com Estilos de Carrossel) */
+
+/* Variáveis de Cores */
+:root {
+    --cor-fundo-principal: #1f374e; /* Um azul escuro similar ao das imagens */
+    --cor-texto-principal: #ffffff; /* Branco para o texto em fundos escuros */
+    --cor-titulo-principal: #000000; /* Preto para os títulos grandes */
+    --cor-link-hover: #4a90e2; /* Um azul claro para destaque, se necessário */
+}
+
+/* Estilos Globais */
+body {
+    font-family: Arial, sans-serif; /* Fonte padrão */
+    background-color: var(--cor-fundo-principal);
+    color: var(--cor-texto-principal);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+/* * ESTILOS DA BARRA DE NAVEGAÇÃO REMOVIDOS */
+
+/* Estilos para Títulos de Seção (O Projeto, A Solução) */
+.section-title {
+    text-align: center;
+    font-size: 4em;
+    font-weight: 900;
+    color: var(--cor-titulo-principal); /* Títulos em preto, como nas imagens */
+    margin: 40px 0;
+    padding: 20px;
+}
+
+/* Estilos para o Conteúdo de Texto */
+.content-section {
+    max-width: 800px;
+    margin: 0 auto; /* Centraliza o conteúdo */
+    padding: 20px;
+    text-align: justify;
+}
+
+.content-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: rgba(255, 255, 255, 0.9); 
+}
+
+/* Estilos Específicos para as Seções */
+#o-projeto .content-section {
+    padding-top: 0; 
+}
+#a-solucao {
+    padding-bottom: 60px; 
+}
+#a-solucao p {
+    color: var(--cor-texto-principal);
+}
+
+
+/* ---------------------------------------------------- */
+/* ESTILOS ESPECÍFICOS DO CARROSSEL (CLASSE .pictures) */
+/* ---------------------------------------------------- */
+
+.pictures {
+    /* Contêiner do Carrossel - Centraliza e define a caixa */
+    margin: 30px auto; 
+    display: flex; /* Permite centralizar o conteúdo (imagem) */
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    position: relative; /* Essencial para que as imagens se sobreponham corretamente */
+    
+    border: 3px solid #000000; 
+    border-radius: 10px; 
+    padding: 30px;
+    
+    /* Largura ajustada para ser menor e responsiva */
+    width: 600px; 
+    max-width: 90%; 
+    
+    /* Altura definida pelo conteúdo, mas podemos forçar uma altura mínima */
+    min-height: 400px; /* Garante que a caixa não colapse */
+    
+    background-color: #f9f9f9; 
+    box-shadow: 0px 0px 25px rgba(0, 68, 255, 0.282);
+    overflow: hidden; /* Garante que nada saia do contêiner */
+}
+
+/* Estilos para as Imagens do Carrossel (carimc, carim) */
+.pictures .carimc,
+.pictures .carim {
+    /* Garante que todas as imagens sejam responsivas ao contêiner */
+    max-width: 100%;
+    height: auto;
+    display: block; 
+    border-radius: 5px; /* Arredondamento suave nas imagens internas */
+    
+    /* Oculta as imagens que não estão ativas na renderização condicional */
+    /* Como você está usando renderização condicional (if/else), este CSS 
+       irá se aplicar apenas à imagem que está no DOM naquele momento. */
+    
+    /* Se você quiser uma transição suave entre imagens, 
+       precisaria de uma abordagem de posicionamento absoluto 
+       e controle de opacidade (opacity) no CSS. */
+}
+
+
+/* Estilos de responsividade (básicos) */
+@media (max-width: 768px) {
+    
+    .section-title {
+        font-size: 2.5em;
+    }
+
+    .content-section {
+        padding: 10px;
+    }
+
+    .pictures {
+        width: 100%; 
+        padding: 15px;
+        min-height: 300px; /* Altura mínima menor para telas móveis */
+    }
+}
