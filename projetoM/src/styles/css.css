@@ -80,7 +80,7 @@ h1 {
   margin: 2em 0;
 }
 
-.VideoBlock video {
+video {
   max-width: 90%;
   max-height: 60vh;
   border-radius: 1em;
