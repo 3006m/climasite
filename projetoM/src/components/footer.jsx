@@ -3,13 +3,13 @@ import '../styles/footer.css';
 
 export default function Footer() {
   return (
-      
-      <footer className="footer">
+
+    <footer className="footer">
       <div className="footer-container">
         {/* Seção de contato */}
         <div className="footer-section">
           <h3>Contato</h3>
-          <p>Email: grupoalfaone@gmail.com</p>
+          <p>Email: alfaone.dev@gmail.com</p>
           <p>Telefone: +55 11 99999-9999</p>
         </div>
 
@@ -41,4 +41,5 @@ export default function Footer() {
         <p>Feito com React</p>
       </div>
     </footer>
-    )};
+  )
+};
