@@ -46,14 +46,7 @@ h1 {
 }
 
 /* ===== Imagens ===== */
-.software-item img {
-  width: 250px;
-  height: 250px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: #456882;
-  padding: 15px;
-}
+
 
 /* ===== Bloco de texto ===== */
 .software-item div {
@@ -79,6 +72,34 @@ h1 {
   color: #D2C1B6;
   text-align: justify;
 }
+
+.software-item {
+  margin-bottom: 40px;
+}
+
+.software-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  flex-wrap: wrap; /* permite quebrar em telas pequenas */
+}
+
+.text-section {
+  flex: 1 1 60%;
+}
+
+.image-section {
+  flex: 1 1 35%;
+}
+
+.software-image {
+  width: 100%;
+  max-width: 300px;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+}
+
 
 /* ===== Responsividade ===== */
 @media (max-width: 800px) {

@@ -1,7 +1,8 @@
 import React from "react";
 import Navbar from "../components/Navbar";
 import "../styles/software.css";
-
+import Arduino from "../assets/arduino.jpeg";
+import Ide from "../assets/ide.jpeg";
 export default function Hardware() {
   const items = [
     {
@@ -30,6 +31,7 @@ Seja para criar projetos simples, como acender um LED, ou sistemas mais avançad
     },
     {
       title: "Configurações de Placa e Porta",
+       img: Arduino,
       text: `A placa utilizada neste projeto foi a ESP32 Dev Module, fabricada pela Espressif Systems. Ela foi instalada na IDE Arduino através do Gerenciador de Placas, utilizando o pacote “esp32 by Espressif Systems”.
 As configurações recomendadas utilizadas no projeto foram:
 Placa: ESP32 Dev Module
@@ -40,6 +42,7 @@ Porta (COM): selecionada automaticamente (ex: COM3 ou COM4).`,
     },
     {
       title: "Bibliotecas Utilizadas",
+      img: Ide,
       text: `• DHT sensor library (Adafruit) leitura de temperatura e umidade.
 • PubSubClient (Nick O’Leary) – comunicação MQTT.
 • WiFi.h (Espressif) – conexão Wi-Fi.`,
@@ -283,14 +286,16 @@ void loop() {
   const lines = item.text.split("\n");
   const allAreBullets = lines.every((line) => line.trim().startsWith("•"));
 
-  return (
-    <div
-      key={index}
-      className={`software-item ${index % 2 === 0 ? "normal" : "reversed"}`}
-    >
-      <div>
+return (
+  <div
+    key={index}
+    className={`software-item ${index % 2 === 0 ? "normal" : "reversed"}`}
+  >
+    {/* Container flex para imagem + texto lado a lado */}
+    <div className="software-content">
+      {/* Texto */}
+      <div className="text-section">
         <h2>{item.title}</h2>
-
         {allAreBullets ? (
           <ul>
             {lines.map((line, i) => (
@@ -309,9 +314,19 @@ void loop() {
           )
         )}
       </div>
+
+      {/* Imagem */}
+      {item.img && (
+        <div className="image-section">
+          <img src={item.img} alt={item.title} className="software-image" />
+        </div>
+      )}
     </div>
-  );
+  </div>
+);
+
 })}
+
       </section>
 
       {/* NOVO CONTAINER PARA O CÓDIGO */}
