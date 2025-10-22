@@ -1,0 +1,119 @@
+.equipe-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .cardi {
+    position: relative;
+    border: 1px solid #234C6A;
+    border-radius: 8px;
+    padding: 16px;
+    text-align: center;
+    width: 200px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1B3C53;
+    transition: transform 0.3s ease;
+    overflow: hidden;
+  }
+  
+  .cardi:hover {
+    transform: scale(1.1);
+  }
+  
+  .cardi-image {
+    width: 100%;
+    border-radius: 8px;
+    height: 15em;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: filter 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cardi:hover .cardi-image {
+    filter: grayscale(0%);
+    transform: scale(1.05);
+  }
+  
+  .cardi-title {
+    font-size: 1.2rem;
+    margin: 10px 0;
+    color: #D2C1B6;
+  }
+  
+  .cardi-cargo {
+    font-size: 1rem;
+    color: #456882;
+  }
+  
+  .cardi-info {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(27, 60, 83, 0.95);
+    color: #D2C1B6;
+    padding: 10px;
+    font-size: 0.9rem;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .cardi:hover .cardi-info {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  h1 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2.3em;
+    font-size: 4em;
+  }
+  
+  .tCont {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 4em;
+  }
+  
+  .equipeTotal {
+    border: 1px solid #234C6A;
+    border-radius: 8px;
+    padding: 4em;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: #1B3C53;
+    transition: transform 0.2s;
+  }
+  
+  .equipeTotal h2 {
+    color: #D2C1B6;
+  }
+  
+  .equipeTotal:hover {
+    transform: scale(1.05);
+  }
+  
+  .equipeTotalI {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
+    margin-top: 20px;
+    opacity: 0;
+    transform: scale(1);
+    filter: grayscale(100%) brightness(0.7);
+    transition: opacity 1.5s ease, transform 0.4s ease, filter 0.4s ease;
+  }
+  
+  .equipeTotal:hover .equipeTotalI {
+    opacity: 1;
+    transform: scale(1.05);
+    filter: grayscale(0%) brightness(1);
+  }
+  
