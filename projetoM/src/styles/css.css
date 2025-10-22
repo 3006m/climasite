@@ -229,6 +229,10 @@ section > h1 {
   flex-shrink: 0;
 }
 
+.code-section {
+  margin-bottom: 2em;
+}
+
 .code-section pre {
   background-color: #1e1e1e;
   color: #ffffff;

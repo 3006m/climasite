@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 
-import "../styles/projeto.css"; // Importe seu arquivo CSS (ajuste o caminho)
+import "../styles/css.css"; // Importe seu arquivo CSS (ajuste o caminho)
 
 import img2 from "../assets/img2.jpeg";
 import img3 from "../assets/img3.jpeg";
