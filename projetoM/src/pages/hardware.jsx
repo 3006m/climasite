@@ -81,7 +81,9 @@ Além disso, o breadboard ajuda a visualizar a disposição física dos componen
         {items.map((item, index) => (
           // Container de cada item
           <div
-            key={index} // Chave única para o React
+            key={index}
+            id={item.title.toLowerCase()} // adiciona id em minúsculas, ex: "esp32"
+            // Chave única para o React
             /* * Define as classes CSS "normal" ou "reversed"
              * para criar o layout alternado (zig-zag).
              */
@@ -99,7 +101,44 @@ Além disso, o breadboard ajuda a visualizar a disposição física dos componen
             </div>
           </div>
         ))}
+        
       </section>
+      <footer className="footer">
+      <div className="footer-container">
+        {/* Seção de contato */}
+        <div className="footer-section">
+          <h3>Contato</h3>
+          <p>Email: grupoalfaone@gmail.com</p>
+          <p>Telefone: +55 11 99999-9999</p>
+        </div>
+
+        {/* Seção de links úteis */}
+        <div className="footer-section">
+          <h3>Links Úteis</h3>
+          <ul>
+            <li><a href="#esp32">ESP32</a></li>
+            <li><a href="#dht11">DHT11</a></li>
+            <li><a href="#mq135">MQ-135</a></li>
+            <li><a href="#leds">LEDs</a></li>
+          </ul>
+        </div>
+
+        {/* Seção de redes sociais */}
+        <div className="footer-section">
+          <h3>Siga-nos</h3>
+          <div className="social-links">
+            <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+          </div>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <p>© 2025 Grupo Alfa One. Todos os direitos reservados.</p>
+        <p>Feito com React</p>
+      </div>
+    </footer>
     </main>
   );
 }
