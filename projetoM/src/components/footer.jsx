@@ -9,7 +9,7 @@ export default function Footer() {
         {/* Seção de contato */}
         <div className="footer-section">
           <h3>Contato</h3>
-          <p>Email: alfaone.dev@gmail.com</p>
+          <p>Email: grupoalfaone@gmail.com</p>
           <p>Telefone: +55 11 99999-9999</p>
         </div>
 
