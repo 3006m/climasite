@@ -26,21 +26,6 @@ export default function Projeto() {
     // O elemento main pode servir como contêiner principal para a página
     <main>
       <Navbar />
-      <h1>A Solução</h1>
-      <p>
-        Para resolver esse problema, o projeto usa o ESP32 junto com os sensores
-        DHT11 e MQ2. O DHT11 mede a temperatura e a umidade, enquanto o MQ2
-        detecta gases tóxicos. Todos os dados são enviados para o ESP32, que
-        processa as informações e mostra os resultados de forma simples por meio
-        de LEDs, facilitando a visualização rápida. Além disso, o sistema pode
-        usar o protocolo MQTT, que faz parte da IoT (Internet das Coisas), para
-        enviar as informações pela rede e permitir que sejam vistas em tempo
-        real em outro dispositivo. Com esse sistema,
-        é possível acompanhar o ambiente mesmo à distância, perceber quando
-        alguma medida está fora do normal e agir rapidamente. Assim, o projeto
-        torna o monitoramento do ambiente mais seguro, prático e moderno,
-        mostrando como a tecnologia pode ajudar no dia a dia.
-      </p>
       {/* SEÇÃO 1: O PROJETO */}
 
       <section id="o-projeto">
