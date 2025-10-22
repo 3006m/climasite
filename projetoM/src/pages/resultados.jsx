@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 import "../styles/css.css";
 
 import Video from "../assets/TesteQueima.mp4";
@@ -73,6 +74,7 @@ com o ESP32, sensores e LEDs, além do monitoramento via MQTT.`
                     </div>
                 ))}
             </section>
+            <Footer />
         </main>
     );
 }

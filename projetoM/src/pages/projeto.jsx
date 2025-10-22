@@ -1,5 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Footer from "../components/Footer";
 
 export default function Projeto() {
   return (
@@ -38,6 +39,7 @@ export default function Projeto() {
         torna o monitoramento do ambiente mais seguro, prático e moderno,
         mostrando como a tecnologia pode ajudar no dia a dia.
       </p>
+      <Footer />
     </main>
   );
 }

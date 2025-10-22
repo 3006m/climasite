@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "../styles/css.css";
 import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 export default function Perguntas() {
     const [opcao, setOpcao] = useState("Todos")
@@ -275,6 +276,7 @@ export default function Perguntas() {
                     />
                 ))}
             </article>
+            <Footer />
         </main>
     );
 }
