@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import "../styles/software.css";
+import "../styles/css.css";
 
 export default function Software() {
   const items = [
