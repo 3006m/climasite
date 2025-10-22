@@ -12,7 +12,6 @@ export default function Projeto() {
         presença de gases tóxicos no ambiente.
       </p>
       <p>
-        {" "}
         A ideia é criar uma forma simples e prática de monitorar essas
         condições, mostrando tudo por meio de LEDs. O DHT11 é o sensor
         responsável por medir a temperatura e a umidade, enquanto o MQ2 detecta
@@ -26,7 +25,14 @@ export default function Projeto() {
         Esse projeto mostra como é possivel usar diversas tecnologias juntas
         para criar algo útil e eficiente para monitorar o ambiente de forma
         simples. A parte de eletrônica ajudou a montar os fios e os sensores, a
-        de programação serviu pra fazer o ESP32 funcionar
+        de programação serviu pra fazer o ESP32 funcionar, ciencias também foi
+        utilizada para entender sobre a umidade, temperatura e gases tóxicos.
+      </p>
+      <p>
+        Juntando tudo isso, o projeto ficou mais fácil de entender, também
+        mostrou que se juntar varias matérias podem criar algo legal e que
+        realmente funcionasse e que seja algo real e útil, deixando o
+        aprendizado mais interessante.
       </p>
     </main>
   );
