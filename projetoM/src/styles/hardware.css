@@ -14,15 +14,6 @@ section > h1 {
   letter-spacing: 2px;
 }
 
-section > h1::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 4px;
-  background-color: #456882;
-  margin: 10px auto 0;
-  border-radius: 2px;
-}
 
 /* 3. Estilo Base para o Card (.hardware-item) */
 .hardware-item {
