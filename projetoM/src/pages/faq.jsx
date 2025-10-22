@@ -1,7 +1,11 @@
 import { useState } from "react";
-import "../styles/faq.css";
+import "../styles/css.css";
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 
 export default function Perguntas() {
+    const [opcao, setOpcao] = useState("Todos")
+
     const perguntas = [
         // Sensores e Hardware
         {
@@ -27,6 +31,26 @@ export default function Perguntas() {
         {
             pergunta: "Por que usamos LEDs no projeto?",
             resposta: "Os LEDs indicam condições como temperatura alta, baixa umidade ou presença de gases, facilitando a visualização local.",
+            categoria: "📡 Sensores e Hardware"
+        },
+        {
+            pergunta: "Para que serve o pino do sensor de gás?",
+            resposta: "Ele envia um sinal analógico proporcional à quantidade de gás detectado no ambiente.",
+            categoria: "📡 Sensores e Hardware"
+        },
+        {
+            pergunta: "Por que usamos resistores em série com LEDs?",
+            resposta: "Para limitar a corrente elétrica e evitar que o LED queime.",
+            categoria: "📡 Sensores e Hardware"
+        },
+        {
+            pergunta: "Qual a importância do pino DHT_PIN ser configurado como INPUT?",
+            resposta: "Isso permite que o ESP32 leia os dados enviados pelo sensor DHT11.",
+            categoria: "📡 Sensores e Hardware"
+        },
+        {
+            pergunta: "Por que o sensor MQ-135 precisa aquecer antes da leitura?",
+            resposta: "Porque o elemento sensível do sensor precisa atingir temperatura ideal para fornecer medições estáveis.",
             categoria: "📡 Sensores e Hardware"
         },
 
@@ -56,6 +80,27 @@ export default function Perguntas() {
             resposta: "Repete continuamente as leituras dos sensores, publica dados e atualiza o estado dos LEDs.",
             categoria: "⚙️ ESP32 e Conexões"
         },
+        {
+            pergunta: "Por que é importante verificar se o ESP32 ainda está conectado ao MQTT?",
+            resposta: "Para garantir que os dados continuem sendo publicados sem interrupções.",
+            categoria: "⚙️ ESP32 e Conexões"
+        },
+        {
+            pergunta: "O que acontece se o ESP32 perder a conexão Wi-Fi?",
+            resposta: "Ele tentará reconectar automaticamente antes de retomar o envio dos dados.",
+            categoria: "⚙️ ESP32 e Conexões"
+        },
+        {
+            pergunta: "Qual a função do WiFiClient no código?",
+            resposta: "É o objeto responsável por gerenciar a conexão de rede usada pelo MQTT.",
+            categoria: "⚙️ ESP32 e Conexões"
+        },
+        {
+            pergunta: "Por que o Serial.begin(115200) é usado no setup()?",
+            resposta: "Para iniciar a comunicação serial com o computador e permitir o monitoramento via Serial Monitor.",
+            categoria: "⚙️ ESP32 e Conexões"
+        },
+
 
         // MQTT
         {
@@ -83,6 +128,27 @@ export default function Perguntas() {
             resposta: "É o aplicativo que envia ou recebe mensagens via MQTT — pode ser o ESP32, um celular ou outro sistema.",
             categoria: "💬 Comunicação MQTT"
         },
+        {
+            pergunta: "Por que o MQTT usa tópicos como 'estacao/manhattan/temperature'?",
+            resposta: "Porque tópicos ajudam a organizar os dados por tipo e origem, facilitando a assinatura e leitura.",
+            categoria: "💬 Comunicação MQTT"
+        },
+        {
+            pergunta: "Qual é a vantagem de usar MQTT em vez de HTTP?",
+            resposta: "O MQTT é mais leve e eficiente para dispositivos IoT com pouca energia e conexão instável.",
+            categoria: "💬 Comunicação MQTT"
+        },
+        {
+            pergunta: "O que faz a função mqttClient.loop()?",
+            resposta: "Mantém o cliente MQTT ativo, verificando novas mensagens e mantendo a conexão.",
+            categoria: "💬 Comunicação MQTT"
+        },
+        {
+            pergunta: "Por que o código publica dados a cada 5 segundos?",
+            resposta: "Para evitar sobrecarga na rede e permitir leituras regulares sem consumo excessivo de energia.",
+            categoria: "💬 Comunicação MQTT"
+        },
+
 
         // Software
         {
@@ -105,6 +171,27 @@ export default function Perguntas() {
             resposta: "Criando uma função reconnect_mqtt() que tenta reconectar sempre que a conexão cair.",
             categoria: "💻 Software e Código"
         },
+        {
+            pergunta: "Por que usamos funções como publish_data()?",
+            resposta: "Para evitar repetição de código e centralizar a lógica de envio dos dados MQTT.",
+            categoria: "💻 Software e Código"
+        },
+        {
+            pergunta: "O que faz o comando snprintf()?",
+            resposta: "Formata uma string combinando texto e variáveis numéricas antes de publicá-la via MQTT.",
+            categoria: "💻 Software e Código"
+        },
+        {
+            pergunta: "Por que usar delay(2000) no loop?",
+            resposta: "Para evitar leituras muito rápidas e permitir tempo suficiente entre as medições.",
+            categoria: "💻 Software e Código"
+        },
+        {
+            pergunta: "Por que verificar isnan(temperature)?",
+            resposta: "Para garantir que a leitura do sensor seja válida antes de enviar os dados.",
+            categoria: "💻 Software e Código"
+        },
+
 
         // Resultados
         {
@@ -121,33 +208,75 @@ export default function Perguntas() {
             pergunta: "Qual foi o maior aprendizado do grupo?",
             resposta: "Compreender a importância da comunicação MQTT e do controle de hardware via software integrado.",
             categoria: "🌎 Resultados e Aprendizados"
-        }
+        },
+        {
+            pergunta: "O que o LED vermelho indica durante o funcionamento?",
+            resposta: "Baixa umidade detectada pelo sensor DHT11.",
+            categoria: "🌎 Resultados e Aprendizados"
+        },
+        {
+            pergunta: "Como os LEDs ajudam na interpretação dos dados?",
+            resposta: "Eles fornecem feedback visual imediato sobre o ambiente monitorado.",
+            categoria: "🌎 Resultados e Aprendizados"
+        },
+        {
+            pergunta: "O que significa ver o LED amarelo aceso?",
+            resposta: "Que há presença de gás acima do limite definido no código.",
+            categoria: "🌎 Resultados e Aprendizados"
+        },
+        {
+            pergunta: "Como o grupo validou os resultados das medições?",
+            resposta: "Comparando os valores do monitor serial com os LEDs acesos e os dados publicados no broker.",
+            categoria: "🌎 Resultados e Aprendizados"
+        },
     ];
 
-    function Card({ pergunta, resposta, categoria }) {
+    function Card({ pergunta, resposta, categoria, opcao }) {
         const [aberta, setAberta] = useState(false); // Cada card tem seu próprio estado
+        const visivel = opcao === "Todos" || opcao === categoria;
         return (
-            <div className="card" onClick={() => setAberta(!aberta)}>
-                <div className="pergunta"><strong>❓ {pergunta}</strong></div>
-                {aberta && <div className="resposta">{resposta}</div>}
-                <div className="categoria">{categoria}</div>
+            <div className="CardPergunta"
+                onClick={() => setAberta(!aberta)}
+                style={{
+                    display: visivel ? "block" : "none",
+                    opacity: visivel ? 1 : 0,
+                    transition: "opacity 0.3s ease"
+                }}
+            >
+                <h4 className="pergunta"><strong>❓ {pergunta}</strong></h4>
+                {aberta && <h5 className="resposta">{resposta}</h5>}
+                <h6 className="categoria">{categoria}</h6>
             </div>
         );
     }
 
     return (
-        <>
-            <section className="Page">
-                <h2>Perguntas e Respostas</h2>
+        <main>
+            <Navbar />
+            <h1>👾 Perguntas e Respostas</h1>
+            <div className="Select">
+                <h2>Selecione uma opção:</h2>
+                <select value={opcao} onChange={(e) => setOpcao(e.target.value)}>
+                    <option value="Todos">👾 Mostrar Todos</option>
+                    <option value="📡 Sensores e Hardware">📡 Sensores e Hardware</option>
+                    <option value="⚙️ ESP32 e Conexões">⚙️ ESP32 e Conexões</option>
+                    <option value="💬 Comunicação MQTT">💬 Comunicação MQTT</option>
+                    <option value="💻 Software e Código">💻 Software e Código</option>
+                    <option value="🌎 Resultados e Aprendizados">🌎 Resultados e Aprendizados</option>
+                </select>
+            </div>
+            <article className="Cards">
                 {perguntas.map((p, i) => (
                     <Card
                         key={i}
                         pergunta={p.pergunta}
                         resposta={p.resposta}
                         categoria={p.categoria}
+                        opcao={opcao}
                     />
                 ))}
-            </section>
-        </>
+            </article>
+            <Footer />
+        </main>
     );
 }

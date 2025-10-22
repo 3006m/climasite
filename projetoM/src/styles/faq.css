@@ -1,18 +1,44 @@
-.Page {
+.Cards {
   display: flex;
-  justify-content: center;
-  flex-direction: column;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
   align-items: center;
   padding: 30px;
-  background-color: #d2c1b6; /* fundo da seção */
   font-family: "Segoe UI", sans-serif;
   margin: 0%;
 }
 
+.Title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.Select {
+  display: flex;
+  justify-content: center;
+
+  select {
+    background-color: #d2c1b6;
+    margin-left: 1em;
+    border-radius: 10px;
+  }
+}
+
+h3 {
+  text-align: center;
+  color: #d2c1b6; /* cor principal escura */
+}
+
 h2 {
   text-align: center;
-  color: #1b3c53; /* cor principal escura */
-  margin-bottom: 25px;
+  color: #d2c1b6; /* cor principal escura */
 }
 
 .card {
@@ -24,7 +50,7 @@ h2 {
   cursor: pointer;
   transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
   color: #d2c1b6; /* texto claro sobre card */
-  width: 75%;
+  width: 42.5%;
   max-width: 700px;
 }
 

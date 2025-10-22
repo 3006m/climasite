@@ -1,0 +1,110 @@
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+
+/* 2. Título Principal (h1) */
+section > h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 40px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+
+/* 3. Estilo Base para o Card (.hardware-item) */
+.hardware-item {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #234C6A; /* Fundo do Card */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-left: 5px solid #ffffff;
+}
+
+/* Efeito Hover */
+.hardware-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* 4. Modificadores de Layout */
+.hardware-item.reversed {
+  flex-direction: row-reverse;
+  border-left: none;
+  border-right: 5px solid #ffffff;
+}
+
+/* 5. Seletores de Elemento Dentro do Item */
+
+/* Imagem (img) */
+.hardware-item > img {
+  width: 100%;
+  max-width: 280px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 2px solid #4b8fc3;
+  padding: 5px;
+  background-color: #fff;
+  flex-shrink: 0;
+}
+
+/* Container de Texto (div) */
+.hardware-item > div {
+  flex: 1;
+}
+
+/* Título do Item (h2) */
+.hardware-item > div > h2 {
+  font-size: 2em;
+  color: #D2C1B6;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #456882;
+  padding-bottom: 5px;
+}
+
+/* Parágrafo (p) */
+.hardware-item > div > p {
+  font-size: 1.1em;
+  text-align: justify;
+  color: #D2C1B6;
+}
+
+
+/* 6. Responsividade (Telas Pequenas) */
+@media (max-width: 900px) {
+  .hardware-item,
+  .hardware-item.reversed {
+    flex-direction: column;
+    text-align: center;
+    border-left: 5px solid #456882; 
+    border-right: none;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .hardware-item > img {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+  
+  .hardware-item > div > h2 {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section > h1 {
+    font-size: 2.2em;
+  }
+}
