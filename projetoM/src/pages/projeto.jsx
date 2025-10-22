@@ -44,7 +44,7 @@ export default function Projeto() {
       {/* SEÇÃO 1: O PROJETO */}
 
       <section id="o-projeto">
-        <h1 className="section-title">O Projeto</h1>
+        <h1>O Projeto</h1>
         <div className="content-section">
           <p>
             Em muitos lugares queremos saber a temperatura, a umidade do
