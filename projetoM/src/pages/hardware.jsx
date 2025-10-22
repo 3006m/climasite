@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import "../styles/hardware.css";
+import "../styles/css.css";
 
 export default function Hardware() {
   const items = [
@@ -85,9 +85,8 @@ Além disso, o breadboard ajuda a visualizar a disposição física dos componen
             /* * Define as classes CSS "normal" ou "reversed"
              * para criar o layout alternado (zig-zag).
              */
-            className={`hardware-item ${
-              index % 2 === 0 ? "normal" : "reversed"
-            }`}
+            className={`hardware-item ${index % 2 === 0 ? "normal" : "reversed"
+              }`}
           >
             {/* Imagem do componente */}
             <img src={item.img} alt={item.title} />

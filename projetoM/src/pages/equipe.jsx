@@ -1,6 +1,6 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import "../styles/equipe.css";
+import "../styles/css.css";
 import FelipeImg from "../assets/felipe.jpg";
 import CorreiaImg from "../assets/correia.jpg";
 import VHImg from "../assets/vh.jpg";

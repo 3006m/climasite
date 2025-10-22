@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/faq.css";
+import "../styles/css.css";
 import Navbar from "../components/navbar";
 
 export default function Perguntas() {
@@ -234,7 +234,7 @@ export default function Perguntas() {
         const [aberta, setAberta] = useState(false); // Cada card tem seu próprio estado
         const visivel = opcao === "Todos" || opcao === categoria;
         return (
-            <div className="card"
+            <div className="CardPergunta"
                 onClick={() => setAberta(!aberta)}
                 style={{
                     display: visivel ? "block" : "none",
@@ -252,21 +252,18 @@ export default function Perguntas() {
     return (
         <main>
             <Navbar />
-            <article className="Title">
-
-                <h2>👾 Perguntas e Respostas</h2>
-                <div className="Select">
-                    <h3>Selecione uma opção:</h3>
-                    <select value={opcao} onChange={(e) => setOpcao(e.target.value)}>
-                        <option value="Todos">👾 Mostrar Todos</option>
-                        <option value="📡 Sensores e Hardware">📡 Sensores e Hardware</option>
-                        <option value="⚙️ ESP32 e Conexões">⚙️ ESP32 e Conexões</option>
-                        <option value="💬 Comunicação MQTT">💬 Comunicação MQTT</option>
-                        <option value="💻 Software e Código">💻 Software e Código</option>
-                        <option value="🌎 Resultados e Aprendizados">🌎 Resultados e Aprendizados</option>
-                    </select>
-                </div>
-            </article>
+            <h1>👾 Perguntas e Respostas</h1>
+            <div className="Select">
+                <h2>Selecione uma opção:</h2>
+                <select value={opcao} onChange={(e) => setOpcao(e.target.value)}>
+                    <option value="Todos">👾 Mostrar Todos</option>
+                    <option value="📡 Sensores e Hardware">📡 Sensores e Hardware</option>
+                    <option value="⚙️ ESP32 e Conexões">⚙️ ESP32 e Conexões</option>
+                    <option value="💬 Comunicação MQTT">💬 Comunicação MQTT</option>
+                    <option value="💻 Software e Código">💻 Software e Código</option>
+                    <option value="🌎 Resultados e Aprendizados">🌎 Resultados e Aprendizados</option>
+                </select>
+            </div>
             <article className="Cards">
                 {perguntas.map((p, i) => (
                     <Card
