@@ -1,0 +1,516 @@
+/* =========================
+   1. Global / Main / Body
+   ========================= */
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", sans-serif;
+  background-color: #1b3c53;
+  color: #d2c1b6;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* =========================
+   2. Títulos e Texto
+   ========================= */
+h1,
+h2,
+h3 {
+  text-align: center;
+  color: #d2c1b6;
+  margin-bottom: 20px;
+}
+
+h1 {
+  font-size: 3em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin: 1em;
+}
+
+.TextBlock {
+  width: 60%;
+  margin: 1em 0 2em 0;
+  line-height: 1.6;
+}
+
+.TextBlock p,
+.TextBlock ul {
+  font-size: 1.1rem;
+  color: #d2c1b6;
+}
+
+.TextBlock ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+/* =========================
+   3. Imagens e Vídeos
+   ========================= */
+.Imagens {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.Imagens img {
+  width: 40%;
+  height: 60vh;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 2px solid #4b8fc3;
+  background-color: #fff;
+}
+
+.VideoBlock {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin: 2em 0;
+}
+
+video {
+  max-width: 90%;
+  max-height: 60vh;
+  border-radius: 1em;
+}
+
+.Cards {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 30px;
+  font-family: "Segoe UI", sans-serif;
+  margin: 0%;
+}
+
+.Title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+
+.Select {
+  display: flex;
+  justify-content: center;
+
+  select {
+    background-color: #d2c1b6;
+    margin-left: 1em;
+    border-radius: 10px;
+  }
+}
+
+.CardPergunta {
+  background: #456882; /* card com cor de destaque */
+  border-radius: 12px;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out, background 0.2s ease-in-out;
+  color: #d2c1b6; /* texto claro sobre card */
+  width: 42.5%;
+  max-width: 700px;
+}
+
+.CardPergunta:hover {
+  background: #234c6a; /* hover com cor secundária */
+  transform: scale(1.01);
+}
+
+.pergunta {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.resposta {
+  margin-top: 8px;
+  background-color: rgba(
+    210,
+    193,
+    182,
+    0.5
+  ); /* fundo semi-transparente suave */
+  color: #1b3c53; /* texto escuro legível */
+  font-size: 0.95rem;
+  line-height: 1.4;
+  border-radius: 8px;
+  padding: 8px;
+
+  /* animação de abrir/fechar */
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease, margin 0.3s ease;
+}
+
+.categoria {
+  margin-top: 10px;
+  font-size: 0.8rem;
+  color: #d2c1b6; /* nota de rodapé clara sobre o card */
+  text-align: right;
+  font-style: italic;
+}
+
+/* =========================
+   4. Cards e Hardware Items
+   ========================= */
+section {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* 2. Título Principal (h1) */
+section > h1 {
+  text-align: center;
+  font-size: 3em;
+  margin-bottom: 40px;
+  position: relative;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* 3. Estilo Base para o Card (.hardware-item) */
+.hardware-item {
+  display: flex;
+  gap: 40px;
+  align-items: center;
+  margin-bottom: 50px;
+  padding: 30px;
+  border-radius: 12px;
+  background-color: #234c6a; /* Fundo do Card */
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  border-left: 5px solid #ffffff;
+}
+
+/* Efeito Hover */
+.hardware-item:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* 4. Modificadores de Layout */
+.hardware-item.reversed {
+  flex-direction: row-reverse;
+  border-left: none;
+  border-right: 5px solid #ffffff;
+}
+
+/* 5. Seletores de Elemento Dentro do Item */
+
+/* Imagem (img) */
+.hardware-item > img {
+  width: 100%;
+  max-width: 280px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 10px;
+  border: 2px solid #4b8fc3;
+  padding: 5px;
+  background-color: #fff;
+  flex-shrink: 0;
+}
+
+.code-section {
+  margin-bottom: 2em;
+}
+
+.code-section pre {
+  background-color: #1e1e1e;
+  color: #ffffff;
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto;
+  font-family: "Courier New", Courier, monospace;
+  white-space: pre-wrap;
+}
+
+/* Container de Texto (div) */
+.hardware-item > div {
+  flex: 1;
+}
+
+/* Título do Item (h2) */
+.hardware-item > div > h2 {
+  font-size: 2em;
+  color: #d2c1b6;
+  margin-top: 0;
+  margin-bottom: 15px;
+  border-bottom: 1px dashed #456882;
+  padding-bottom: 5px;
+}
+
+/* Parágrafo (p) */
+.hardware-item > div > p {
+  font-size: 1.1em;
+  text-align: justify;
+  color: #d2c1b6;
+}
+
+/* 6. Responsividade (Telas Pequenas) */
+@media (max-width: 900px) {
+  .hardware-item,
+  .hardware-item.reversed {
+    flex-direction: column;
+    text-align: center;
+    border-left: 5px solid #456882;
+    border-right: none;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .hardware-item > img {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .hardware-item > div > h2 {
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  section > h1 {
+    font-size: 2.2em;
+  }
+}
+
+/* =========================
+   5. Equipe / Cardi
+   ========================= */
+.equipe-container,
+.tCont {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cardi {
+  position: relative;
+  width: 200px;
+  text-align: center;
+  border-radius: 8px;
+  background-color: #1b3c53;
+  border: 1px solid #234c6a;
+  padding: 16px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.cardi:hover {
+  transform: scale(1.1);
+}
+
+.cardi-image {
+  width: 100%;
+  height: 15em;
+  object-fit: cover;
+  border-radius: 8px;
+  filter: grayscale(30%);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+.cardi:hover .cardi-image {
+  filter: grayscale(0%);
+  transform: scale(1.05);
+}
+
+.cardi-title {
+  font-size: 1.2rem;
+  margin: 10px 0;
+  color: #d2c1b6;
+}
+
+.cardi-cargo {
+  font-size: 1rem;
+  color: #456882;
+}
+
+.cardi-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(27, 60, 83, 0.95);
+  color: #d2c1b6;
+  padding: 10px;
+  font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.cardi:hover .cardi-info {
+  opacity: 1;
+  transform: translateY(0);
+}
+.tCont {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  padding: 4em;
+}
+
+.equipeTotal {
+  border: 1px solid #234c6a;
+  border-radius: 8px;
+  padding: 4em;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background-color: #1b3c53;
+  transition: transform 0.2s;
+}
+
+.equipeTotal h2 {
+  color: #d2c1b6;
+}
+
+.equipeTotal:hover {
+  transform: scale(1.05);
+}
+
+.equipeTotalI {
+  width: 100%;
+  max-width: 600px;
+  border-radius: 8px;
+  margin-top: 20px;
+  opacity: 0;
+  transform: scale(1);
+  filter: grayscale(100%) brightness(0.7);
+  transition: opacity 1.5s ease, transform 0.4s ease, filter 0.4s ease;
+}
+
+.equipeTotal:hover .equipeTotalI {
+  opacity: 1;
+  transform: scale(1.05);
+  filter: grayscale(0%) brightness(1);
+}
+
+/* =========================
+   6. Simulação
+   ========================= */
+
+.simulacao-section {
+  max-width: 900px;
+  text-align: center;
+  margin-bottom: 2em;
+}
+
+.simulacao-section h1 {
+  color: #00aaff;
+  margin-bottom: 30px;
+}
+
+.simulacao-img {
+  width: 110vw;
+  max-width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.simulacao-text {
+  font-size: 1.1rem;
+  color: #f1f1f1;
+  margin-bottom: 25px;
+  line-height: 1.6;
+}
+
+.simulacao-link {
+  display: inline-block;
+  padding: 12px 25px;
+  background-color: #00aaff;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  transition: background-color 0.3s;
+}
+
+.simulacao-link:hover {
+  background-color: #0088cc;
+}
+
+/* =========================
+   7. Responsividade
+   ========================= */
+@media (max-width: 900px) {
+  .hardware-item,
+  .hardware-item.reversed {
+    flex-direction: column;
+    border-left: 5px solid #456882;
+    border-right: none;
+    text-align: center;
+    gap: 20px;
+    padding: 25px;
+  }
+
+  .hardware-item > img {
+    max-width: 80%;
+    height: auto;
+    margin: 0 auto;
+  }
+
+  .hardware-item > div > h2 {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  h1 {
+    font-size: 2.2em;
+  }
+
+  .CardPergunta {
+    width: 95%;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    padding: 100px 16px 32px;
+  }
+
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1.2rem;
+  }
+}
+
+
+.pictures img{
+ width: 70em;
+ border-radius: 1em;
+  transition: ease 0.8s;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.pictures img:hover{
+  width: 78em;
+  border-radius: 1em;
+  transition: ease 0.2s;
+  box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.8);
+ }

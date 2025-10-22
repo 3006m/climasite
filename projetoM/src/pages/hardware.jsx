@@ -1,6 +1,7 @@
 import React from "react";
 import Navbar from "../components/Navbar";
-import "../styles/hardware.css";
+import Footer from "../components/Footer";
+import "../styles/css.css";
 
 export default function Hardware() {
   const items = [
@@ -72,22 +73,23 @@ Além disso, o breadboard ajuda a visualizar a disposição física dos componen
     // Container principal da página
     <main>
       <Navbar />
+      {/* Título da seção */}
+      <h1>Componentes de Hardware</h1>
 
+      {/* Mapeia o array 'items' para renderizar cada componente */}
       <section>
-        {/* Título da seção */}
-        <h1>Componentes de Hardware</h1>
 
-        {/* Mapeia o array 'items' para renderizar cada componente */}
         {items.map((item, index) => (
           // Container de cada item
           <div
-            key={index} // Chave única para o React
+            key={index}
+            id={item.title.toLowerCase()} // adiciona id em minúsculas, ex: "esp32"
+            // Chave única para o React
             /* * Define as classes CSS "normal" ou "reversed"
              * para criar o layout alternado (zig-zag).
              */
-            className={`hardware-item ${
-              index % 2 === 0 ? "normal" : "reversed"
-            }`}
+            className={`hardware-item ${index % 2 === 0 ? "normal" : "reversed"
+              }`}
           >
             {/* Imagem do componente */}
             <img src={item.img} alt={item.title} />
@@ -100,6 +102,7 @@ Além disso, o breadboard ajuda a visualizar a disposição física dos componen
           </div>
         ))}
       </section>
-    </main>
+      <Footer />
+    </main >
   );
 }

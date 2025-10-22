@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "../styles/perguntas.css";
+import "../styles/css.css";
 
 export default function Perguntas() {
     const [opcao, setOpcao] = useState("Todas")

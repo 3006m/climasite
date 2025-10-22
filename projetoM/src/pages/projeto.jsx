@@ -1,37 +1,37 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-import "../styles/projeto.css"; // Importe seu arquivo CSS (ajuste o caminho)
+import Footer from "../components/Footer";
+
+import "../styles/css.css"; // Importe seu arquivo CSS (ajuste o caminho)
 
 import img2 from "../assets/img2.jpeg";
 import img3 from "../assets/img3.jpeg";
 import img4 from "../assets/img4.jpeg";
 
-
 export default function Projeto() {
-      const [carrousel, setCarrousel] = useState(1)
+  const [carrousel, setCarrousel] = useState(1)
 
-    useEffect(() => {
-      const interval = setInterval(() => {
-        setCarrousel(carrousel => carrousel + 1)
-        if (carrousel >= 2) {
-          setCarrousel(0)
-        }
-      }, 2000);
-      return () => clearInterval(interval);
-    })
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCarrousel(carrousel => carrousel + 1)
+      if (carrousel >= 2) {
+        setCarrousel(0)
+      }
+    }, 2000);
+    return () => clearInterval(interval);
+  })
 
   return (
     // O elemento main pode servir como contêiner principal para a página
     <main>
       <Navbar />
-
       {/* SEÇÃO 1: O PROJETO */}
-    
+
       <section id="o-projeto">
-        <h1 className="section-title">O Projeto</h1>
-        <div className="content-section">
-          <p>
+        <h1>O Projeto</h1>
+        <div>
+          <p className="simulacao-text">
             Em muitos lugares queremos saber a temperatura, a umidade do
             ambiente ou se tem gás tóxico no ar. Esses fatores influenciam o
             conforto, a saúde e a segurança das pessoas. Muitas vezes estamos em
@@ -51,20 +51,21 @@ export default function Projeto() {
         </div>
       </section>
 
-  <div className='pictures'>
-      
-          {carrousel == 0 ? <img src={img2}  alt="carrouselFront" className="carimc" /> : ""}
-          {carrousel == 1 ? <img src={img3} alt="carrouselFront" className="carim" /> : ""}
-          {carrousel == 2 ? <img src={img4} alt="carrouselFront" className="carim" /> : ""}      
-        
-   </div>
+      <div className='pictures'>
 
-      {/* SEÇÃO 2: A SOLUÇÃO */}
+        {carrousel == 0 ? <img src={img2} alt="carrouselFront" className="carimc" /> : ""}
+        {carrousel == 1 ? <img src={img3} alt="carrouselFront" className="carim" /> : ""}
+        {carrousel == 2 ? <img src={img4} alt="carrouselFront" className="carim" /> : ""}
+
+      </div>
+
+
 
       <section id="a-solucao">
-        <h1 className="section-title">A Solução</h1>
-        <div className="content-section">
-          <p>
+        <h1>A Solução</h1>
+        <div>
+          <p className="simulacao-text">
+            william
             Para resolver esse problema, o projeto usa o ESP32 junto com os
             sensores DHT11 e MQ2. O DHT11 mede a temperatura e a umidade,
             enquanto o MQ2 detecta gases tóxicos. Todos os dados são enviados
@@ -81,6 +82,7 @@ export default function Projeto() {
           </p>
         </div>
       </section>
+      <Footer />
     </main>
   );
 }
