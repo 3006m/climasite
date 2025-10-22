@@ -20,7 +20,7 @@ export default function Simulacao() {
           className="simulacao-img"
         />
 
-        {/* Texto explicativo */}
+        
         <p className="simulacao-text">
           Esta simulação foi criada utilizando a plataforma Wokwi, que permite testar
           projetos com microcontroladores como o ESP32, sensores e atuadores em tempo real.

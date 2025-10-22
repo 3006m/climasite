@@ -30,8 +30,8 @@ export default function Projeto() {
 
       <section id="o-projeto">
         <h1>O Projeto</h1>
-        <div className="content-section">
-          <p>
+        <div>
+          <p className="simulacao-text">
             Em muitos lugares queremos saber a temperatura, a umidade do
             ambiente ou se tem gás tóxico no ar. Esses fatores influenciam o
             conforto, a saúde e a segurança das pessoas. Muitas vezes estamos em
@@ -59,12 +59,12 @@ export default function Projeto() {
 
       </div>
 
-      {/* SEÇÃO 2: A SOLUÇÃO */}
+
 
       <section id="a-solucao">
-        <h1 className="section-title">A Solução</h1>
-        <div className="content-section">
-          <p>
+        <h1>A Solução</h1>
+        <div>
+          <p className="simulacao-text">
             Para resolver esse problema, o projeto usa o ESP32 junto com os
             sensores DHT11 e MQ2. O DHT11 mede a temperatura e a umidade,
             enquanto o MQ2 detecta gases tóxicos. Todos os dados são enviados

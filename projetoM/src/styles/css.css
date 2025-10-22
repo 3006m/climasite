@@ -499,3 +499,18 @@ section > h1 {
     font-size: 1.2rem;
   }
 }
+
+
+.pictures img{
+ width: 70em;
+ border-radius: 1em;
+  transition: ease 0.8s;
+  box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
+}
+
+.pictures img:hover{
+  width: 78em;
+  border-radius: 1em;
+  transition: ease 0.2s;
+  box-shadow: 0 0 20px 6px rgba(255, 255, 255, 0.8);
+ }
