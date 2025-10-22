@@ -5,34 +5,38 @@ export default function Projeto() {
   return (
     <main>
       <Navbar />
-      <h1>Projeto</h1>
+      <h1> O Projeto </h1>
       <p>
-        O objetivo deste projeto é montar um sistema usando o ESP32, junto com
-        os sensores DHT11 e MQ2, para medir a umidade, a temperatura e a
-        presença de gases tóxicos no ambiente.
+        Em muitos lugares queremos saber a temperatura, a umidade do ambiente ou
+        se tem gás tóxico no ar. Esses fatores influenciam o conforto, a saúde e
+        a segurança das pessoas. Muitas vezes estamos em lugares muito quentes,
+        úmidos ou com gases tóxicos, o que pode causar desconforto, problemas de
+        saúde e até acidentes. Sem medir essas condições, não conseguimos
+        perceber rapidamente quando algo está errado, e isso pode colocar
+        pessoas em risco. Por isso, é importante ter um sistema que ajude a
+        acompanhar essas informações de forma prática e rápida, garantindo que o
+        ambiente seja seguro e agradável para todos. Além disso, ambientes
+        diferentes exigem cuidados diferentes: em uma casa, escola ou fábrica,
+        os níveis ideais de temperatura e umidade mudam, e o monitoramento
+        constante ajuda a manter o ambiente dentro do padrão seguro. Isso evita
+        problemas de saúde, melhora o bem-estar e ainda ajuda a prevenir
+        acidentes com gases tóxicos.
       </p>
+
+      <h1>A Solução</h1>
       <p>
-        A ideia é criar uma forma simples e prática de monitorar essas
-        condições, mostrando tudo por meio de LEDs. O DHT11 é o sensor
-        responsável por medir a temperatura e a umidade, enquanto o MQ2 detecta
-        gases tóxicos, ajudando a identificar se há algum risco no ambiente.
-        Para mostrar as informações, foram usados quatro LEDs: um indica a
-        umidade, outro mostra a temperatura, o terceiro sinaliza a presença de
-        gás tóxico e o último acende para indicar que o sistema está funcionando
-        corretamente.
-      </p>
-      <p>
-        Esse projeto mostra como é possivel usar diversas tecnologias juntas
-        para criar algo útil e eficiente para monitorar o ambiente de forma
-        simples. A parte de eletrônica ajudou a montar os fios e os sensores, a
-        de programação serviu pra fazer o ESP32 funcionar, ciencias também foi
-        utilizada para entender sobre a umidade, temperatura e gases tóxicos.
-      </p>
-      <p>
-        Juntando tudo isso, o projeto ficou mais fácil de entender, também
-        mostrou que se juntar varias matérias podem criar algo legal e que
-        realmente funcionasse e que seja algo real e útil, deixando o
-        aprendizado mais interessante.
+        Para resolver esse problema, o projeto usa o ESP32 junto com os sensores
+        DHT11 e MQ2. O DHT11 mede a temperatura e a umidade, enquanto o MQ2
+        detecta gases tóxicos. Todos os dados são enviados para o ESP32, que
+        processa as informações e mostra os resultados de forma simples por meio
+        de LEDs, facilitando a visualização rápida. Além disso, o sistema pode
+        usar o protocolo MQTT, que faz parte da IoT (Internet das Coisas), para
+        enviar as informações pela rede e permitir que sejam vistas em tempo
+        real em outro dispositivo. Com esse sistema,
+        é possível acompanhar o ambiente mesmo à distância, perceber quando
+        alguma medida está fora do normal e agir rapidamente. Assim, o projeto
+        torna o monitoramento do ambiente mais seguro, prático e moderno,
+        mostrando como a tecnologia pode ajudar no dia a dia.
       </p>
     </main>
   );
