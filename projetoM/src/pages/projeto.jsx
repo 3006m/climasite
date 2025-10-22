@@ -1,16 +1,13 @@
 import React from "react";
 import { useEffect, useState } from "react";
 import Navbar from "../components/Navbar";
-<<<<<<< HEAD
 import Footer from "../components/Footer";
-=======
+
 import "../styles/projeto.css"; // Importe seu arquivo CSS (ajuste o caminho)
 
 import img2 from "../assets/img2.jpeg";
 import img3 from "../assets/img3.jpeg";
 import img4 from "../assets/img4.jpeg";
-
->>>>>>> c1f9d99b7c8e0cacb78fcd40079366d249d8fac5
 
 export default function Projeto() {
       const [carrousel, setCarrousel] = useState(1)
@@ -30,7 +27,7 @@ export default function Projeto() {
     <main>
       <Navbar />
 
-<<<<<<< HEAD
+
       <h1>A Solução</h1>
       <p>
         Para resolver esse problema, o projeto usa o ESP32 junto com os sensores
@@ -47,7 +44,6 @@ export default function Projeto() {
         mostrando como a tecnologia pode ajudar no dia a dia.
       </p>
       <Footer />
-=======
       {/* SEÇÃO 1: O PROJETO */}
     
       <section id="o-projeto">
@@ -103,7 +99,7 @@ export default function Projeto() {
           </p>
         </div>
       </section>
->>>>>>> c1f9d99b7c8e0cacb78fcd40079366d249d8fac5
+      <Footer />
     </main>
   );
 }
