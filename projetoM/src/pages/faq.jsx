@@ -252,34 +252,32 @@ export default function Perguntas() {
     return (
         <main>
             <Navbar />
-            <section className="Page">
-                <article className="Title">
+            <article className="Title">
 
-                    <h2>👾 Perguntas e Respostas</h2>
-                    <div className="Select">
-                        <h3>Selecione uma opção:</h3>
-                        <select value={opcao} onChange={(e) => setOpcao(e.target.value)}>
-                            <option value="Todos">👾 Mostrar Todos</option>
-                            <option value="📡 Sensores e Hardware">📡 Sensores e Hardware</option>
-                            <option value="⚙️ ESP32 e Conexões">⚙️ ESP32 e Conexões</option>
-                            <option value="💬 Comunicação MQTT">💬 Comunicação MQTT</option>
-                            <option value="💻 Software e Código">💻 Software e Código</option>
-                            <option value="🌎 Resultados e Aprendizados">🌎 Resultados e Aprendizados</option>
-                        </select>
-                    </div>
-                </article>
-                <article className="Cards">
-                    {perguntas.map((p, i) => (
-                        <Card
-                            key={i}
-                            pergunta={p.pergunta}
-                            resposta={p.resposta}
-                            categoria={p.categoria}
-                            opcao={opcao}
-                        />
-                    ))}
-                </article>
-            </section>
+                <h2>👾 Perguntas e Respostas</h2>
+                <div className="Select">
+                    <h3>Selecione uma opção:</h3>
+                    <select value={opcao} onChange={(e) => setOpcao(e.target.value)}>
+                        <option value="Todos">👾 Mostrar Todos</option>
+                        <option value="📡 Sensores e Hardware">📡 Sensores e Hardware</option>
+                        <option value="⚙️ ESP32 e Conexões">⚙️ ESP32 e Conexões</option>
+                        <option value="💬 Comunicação MQTT">💬 Comunicação MQTT</option>
+                        <option value="💻 Software e Código">💻 Software e Código</option>
+                        <option value="🌎 Resultados e Aprendizados">🌎 Resultados e Aprendizados</option>
+                    </select>
+                </div>
+            </article>
+            <article className="Cards">
+                {perguntas.map((p, i) => (
+                    <Card
+                        key={i}
+                        pergunta={p.pergunta}
+                        resposta={p.resposta}
+                        categoria={p.categoria}
+                        opcao={opcao}
+                    />
+                ))}
+            </article>
         </main>
     );
 }
