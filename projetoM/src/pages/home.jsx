@@ -1,5 +1,5 @@
-import React from 'react'
-import '../styles/home.css'
+import React from 'react';
+import '../styles/home.css';
 import { Link } from 'react-router-dom';
 
 function Home() {
@@ -14,16 +14,18 @@ function Home() {
   ];
 
   return (
-<div className="home-container">
-      <div className="hero">
-        <div className="hero-overlay">
-          <main className="main-content">
-            <section className="hero-section">
+    <div className="home-page-container">
+      <div className="home-hero">
+        <div className="home-hero-overlay">
+          <div className="home-main-content">
+            <section className="home-hero-section">
               <h1>Sistema de Monitoramento Climático</h1>
-              <p className="subtitle">
+              <p className="home-subtitle">
                 Monitoramento em tempo real de variáveis climáticas com tecnologia IoT
               </p>
-               <p><p>
+            </section>
+
+             <p>  <p>
         O objetivo deste projeto é montar um sistema usando o ESP32, junto com
         os sensores DHT11 e MQ2, para medir a umidade, a temperatura e a
         presença de gases tóxicos no ambiente.
@@ -51,21 +53,20 @@ function Home() {
         realmente funcionasse e que seja algo real e útil, deixando o
         aprendizado mais interessante.
       </p></p>
-            </section>
 
-            <section className="cards-grid">
+            <section className="home-cards-grid">
               {cards.map((card, index) => (
-                <Link to={card.path} className="card" key={index}>
+                <Link to={card.path} className="home-card" key={index}>
                   <h3>{card.title}</h3>
                   <p>{card.description}</p>
                 </Link>
               ))}
             </section>
-          </main>
+          </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Home
+export default Home;
