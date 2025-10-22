@@ -1,7 +1,14 @@
 import React from "react";
-import Navbar from "../components/Navbar";
+import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import "../styles/css.css";
+
+import Image1 from '../assets/UPLOAD.png'
+import esp from '../assets/esp32_devkitc.jpg'
+import espp from '../assets/esp32_pinout-2.jpg'
+import server from '../assets/KHM-001-02.png'
+import uaifi from '../assets/unnamed.png'
+import ide from '../assets/Arduino-Set-Up-Window.png'
 
 export default function Software() {
   const items = [
@@ -28,6 +35,7 @@ Benefícios:
 A IDE Arduino simplifica o processo de programação, permitindo que o usuário foque na lógica do projeto sem se preocupar com detalhes técnicos complexos. É uma ferramenta indispensável para quem deseja explorar áreas como automação, robótica e IoT.
 
 Seja para criar projetos simples, como acender um LED, ou sistemas mais avançados, a IDE Arduino é a porta de entrada para o mundo da programação de microcontroladores.`,
+      image: Image1,
     },
     {
       title: "Configurações de Placa e Porta",
@@ -38,12 +46,14 @@ Flash Frequency: 80 MHz
 Upload Speed: 115200
 Partition Scheme: Default 4MB with spiffs
 Porta (COM): selecionada automaticamente (ex: COM3 ou COM4).`,
+      image: esp
     },
     {
       title: "Bibliotecas Utilizadas",
       text: `• DHT sensor library (Adafruit) leitura de temperatura e umidade.
 • PubSubClient (Nick O’Leary) – comunicação MQTT.
 • WiFi.h (Espressif) – conexão Wi-Fi.`,
+      image: ide
     },
     {
       title: "Configuração dos Pinos do ESP32",
@@ -53,37 +63,32 @@ LED Vermelho → GPIO 21
 LED de Controle → GPIO 22
 Sensor DHT11 → GPIO 18
 Sensor MQ-135 → GPIO 2 (A0)`,
+      image: espp
     },
     {
       title: "Configuração da Rede Wi-Fi",
       text: `SSID: AP360_SENAI
 Senha: senai123`,
+      image: uaifi
     },
     {
       title: "Configuração do Servidor MQTT",
-      text: `O MQTT (Message Queuing Telemetry Transport) é um protocolo de comunicação leve e eficiente, muito usado em Internet das Coisas (IoT), que permite que dispositivos enviem e recebam dados de forma confiável mesmo com pouca largura de banda ou conexão instável. Ele funciona no modelo publicador/assinante (publish/subscribe): o broker é o servidor que recebe mensagens de quem publica e envia para quem está inscrito; o cliente é qualquer dispositivo ou software que envia ou recebe mensagens, como o ESP32 do seu projeto; e os tópicos (topics) são canais de comunicação que categorizam as mensagens, por exemplo estacao/manhattan/temperature para temperatura, estacao/manhattan/humidity para umidade e estacao/manhattan/gas para gás.
+      text: `O MQTT (Message Queuing Telemetry Transport) é um protocolo leve e eficiente usado em IoT, permitindo que dispositivos enviem e recebam dados de forma confiável mesmo com pouca banda.
 
-No fluxo de dados, um cliente publica uma mensagem em um tópico, o broker recebe e envia essa mensagem para todos os clientes inscritos naquele tópico, que recebem a informação quase em tempo real. As vantagens do MQTT incluem ser leve e rápido, assíncrono, flexível (qualquer número de clientes pode publicar e assinar tópicos diferentes) e confiável, com mecanismos de qualidade de serviço (QoS) para garantir a entrega.
+Ele funciona no modelo publish/subscribe, onde o broker recebe mensagens e as distribui aos clientes inscritos nos tópicos correspondentes.
 
-No projeto do ESP32, por exemplo, o microcontrolador lê sensores como DHT11 e MQ-135 e publica os dados nos tópicos do broker. Qualquer outro dispositivo que assine esses tópicos pode ler em tempo real a temperatura, a umidade e os níveis de gás. É como um quadro de avisos digital: cada sensor escreve no quadro e quem quiser pode ler a informação naquele tópico específico.
+No projeto, o ESP32 lê sensores (DHT11 e MQ-135) e publica dados de temperatura, umidade e gás nos tópicos configurados.
 
-VAMOS ENTENDER COMO ISSO FUNCIONA NA PRÁTICA?
+Exemplo de configuração:
 
-O sistema funciona como um grupo do WhatsApp: os sensores são as pessoas que enviam mensagens (como temperatura, umidade e gás), e o broker é o grupo em si — ele entrega as mensagens para todos que estão inscritos. Assim, qualquer cliente, como um aplicativo no celular ou computador, consegue ver em tempo real o que os sensores estão “falando”, sem precisar perguntar um por um.
-
-No projeto do ESP32, os componentes são conectados da seguinte forma: os LEDs (amarelo, verde, vermelho e de controle) indicam os estados do sistema e dos sensores; o sensor DHT11 mede a temperatura e umidade; o sensor MQ-135 monitora a qualidade do ar, detectando gases. Todos esses sensores são conectados aos pinos específicos do ESP32, conforme configurado no código. Para instalar, basta alimentar o ESP32 com energia (via USB ou fonte compatível), conectar os sensores e LEDs aos pinos correspondentes, configurar a rede Wi-Fi no código e carregar o programa na placa usando a Arduino IDE.
-
-Uma vez conectado, o ESP32 automaticamente envia os dados dos sensores via MQTT para o broker. Qualquer dispositivo que esteja inscrito nos tópicos configurados (como “estacao/manhattan/temperature” ou “estacao/manhattan/gas”) consegue receber essas informações em tempo real. Isso garante que você, como cliente, possa monitorar a temperatura, umidade e qualidade do ar de forma prática, rápida e segura, sem precisar mexer diretamente nos sensores.
-
-EXEMPLO DE CONFIGURAÇÃO UTILIZADA NO PROJETO:
-
-\n Broker: 10.136.38.196
+Broker: 10.136.38.196
 Porta: 1883
 Client ID: PROJETO_MANHATTAN
 Tópicos:
 • estacao/manhattan/temperature
 • estacao/manhattan/humidity
 • estacao/manhattan/gas`,
+      image: server
     },
   ];
 
@@ -273,34 +278,33 @@ void loop() {
 
   delay(2000); // Aguarda 2 segundos antes da próxima leitura
 }`;
+
   return (
     <main>
       <Navbar />
-      <h1>Componentes de Software</h1>
       <section>
+        <h1>Componentes de Software</h1>
 
-        {items.map((item, index) => {
-          const lines = item.text.split("\n");
-          return (
-            <div
-              key={index}
-              className={`hardware-item ${index % 2 === 0 ? "" : "reversed"}`}
-            >
-              <div>
-                <h2>{item.title}</h2>
-                {lines.map((line, i) =>
-                  line.trim().startsWith("•") ? (
-                    <ul key={i}>
-                      <li>{line.replace("•", "").trim()}</li>
-                    </ul>
-                  ) : (
-                    <p key={i}>{line}</p>
-                  )
-                )}
-              </div>
+        {items.map((item, index) => (
+          <div
+            key={index}
+            className={`hardware-item ${index % 2 !== 0 ? "reversed" : ""}`}
+          >
+            {item.image && <img src={item.image} alt={item.title} />}
+            <div>
+              <h2>{item.title}</h2>
+              {item.text.split("\n").map((line, i) =>
+                line.trim().startsWith("•") ? (
+                  <ul key={i}>
+                    <li>{line.replace("•", "").trim()}</li>
+                  </ul>
+                ) : (
+                  line.trim() && <p key={i}>{line}</p>
+                )
+              )}
             </div>
-          );
-        })}
+          </div>
+        ))}
       </section>
 
       <section className="code-section">
@@ -309,8 +313,9 @@ void loop() {
           <code>{code}</code>
         </pre>
       </section>
+
       <Footer />
-    </main >
+    </main>
   );
 }
 
