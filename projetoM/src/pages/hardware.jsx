@@ -120,6 +120,7 @@ Além disso, o breadboard ajuda a visualizar a disposição física dos componen
             <li><a href="#dht11">DHT11</a></li>
             <li><a href="#mq135">MQ-135</a></li>
             <li><a href="#leds">LEDs</a></li>
+            <li><a href="#resistores">Resistores</a></li>
           </ul>
         </div>
 
@@ -129,7 +130,7 @@ Além disso, o breadboard ajuda a visualizar a disposição física dos componen
           <div className="social-links">
             <a href="https://github.com" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer">Twitter</a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
           </div>
         </div>
       </div>
