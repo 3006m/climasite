@@ -1,0 +1,112 @@
+/* ===== Seção principal ===== */
+section {
+  width: 90%;
+  max-width: 1000px;
+  margin: 80px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+/* ===== Título principal ===== */
+h1 {
+  text-align: center;
+  font-size: 2.4rem;
+  margin-bottom: 40px;
+  color: #D2C1B6;
+  font-weight: 700;
+}
+
+/* ===== Container de cada item ===== */
+.software-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+  background-color: #234C6A;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+  padding: 40px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Efeito ao passar o mouse */
+.software-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* ===== Layout alternado (zig-zag) ===== */
+.software-item.normal {
+  flex-direction: row;
+}
+
+.software-item.reversed {
+  flex-direction: row-reverse;
+}
+
+/* ===== Imagens ===== */
+.software-item img {
+  width: 250px;
+  height: 250px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #456882;
+  padding: 15px;
+}
+
+/* ===== Bloco de texto ===== */
+.software-item div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  color: #D2C1B6;
+  gap: 10px;
+}
+
+/* ===== Título do componente ===== */
+.software-item h2 {
+  font-size: 1.8rem;
+  color: #D2C1B6;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+/* ===== Texto ===== */
+.software-item p {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: #D2C1B6;
+  text-align: justify;
+}
+
+/* ===== Responsividade ===== */
+@media (max-width: 800px) {
+  .software-item {
+    flex-direction: column !important;
+    text-align: center;
+  }
+
+  .software-item img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .software-item h2 {
+    border-left: none;
+    border-bottom: 3px solid #457b9d;
+    padding-left: 0;
+    padding-bottom: 5px;
+  }
+}
+
+.code-section pre {
+  background-color: #1e1e1e; /* fundo escuro */
+  color: #ffffff; /* texto branco */
+  padding: 1rem;
+  border-radius: 8px;
+  overflow-x: auto; /* permite scroll horizontal se o código for grande */
+  font-family: 'Courier New', Courier, monospace;
+  white-space: pre-wrap; /* mantém quebras de linha */
+}
+
