@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../components/Navbar";
 import "../styles/software.css";
 
-export default function Hardware() {
+export default function Software() {
   const items = [
     {
       title: "IDE Utilizada",
@@ -82,8 +82,7 @@ Client ID: PROJETO_MANHATTAN
 Tópicos:
 • estacao/manhattan/temperature
 • estacao/manhattan/humidity
-• estacao/manhattan/gas
-`,
+• estacao/manhattan/gas`,
     },
   ];
 
@@ -272,49 +271,36 @@ void loop() {
   }
 
   delay(2000); // Aguarda 2 segundos antes da próxima leitura
-}`; // MANTENHA O CÓDIGO JÁ DEFINIDO AQUI COMO ESTAVA
-
+}`;
   return (
     <main>
       <Navbar />
       <section>
         <h1>Componentes de Software</h1>
         {items.map((item, index) => {
-  const lines = item.text.split("\n");
-  const allAreBullets = lines.every((line) => line.trim().startsWith("•"));
-
-  return (
-    <div
-      key={index}
-      className={`software-item ${index % 2 === 0 ? "normal" : "reversed"}`}
-    >
-      <div>
-        <h2>{item.title}</h2>
-
-        {allAreBullets ? (
-          <ul>
-            {lines.map((line, i) => (
-              <li key={i}>{line.replace("•", "").trim()}</li>
-            ))}
-          </ul>
-        ) : (
-          lines.map((line, i) =>
-            line.trim().startsWith("•") ? (
-              <ul key={i}>
-                <li>{line.replace("•", "").trim()}</li>
-              </ul>
-            ) : (
-              <p key={i}>{line}</p>
-            )
-          )
-        )}
-      </div>
-    </div>
-  );
-})}
+          const lines = item.text.split("\n");
+          return (
+            <div
+              key={index}
+              className={`hardware-item ${index % 2 === 0 ? "" : "reversed"}`}
+            >
+              <div>
+                <h2>{item.title}</h2>
+                {lines.map((line, i) =>
+                  line.trim().startsWith("•") ? (
+                    <ul key={i}>
+                      <li>{line.replace("•", "").trim()}</li>
+                    </ul>
+                  ) : (
+                    <p key={i}>{line}</p>
+                  )
+                )}
+              </div>
+            </div>
+          );
+        })}
       </section>
 
-      {/* NOVO CONTAINER PARA O CÓDIGO */}
       <section className="code-section">
         <h1>Código Completo do Projeto</h1>
         <pre>
@@ -324,3 +310,4 @@ void loop() {
     </main>
   );
 }
+
