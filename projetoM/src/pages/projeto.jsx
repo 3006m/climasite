@@ -43,7 +43,6 @@ export default function Projeto() {
         torna o monitoramento do ambiente mais seguro, prático e moderno,
         mostrando como a tecnologia pode ajudar no dia a dia.
       </p>
-      <Footer />
       {/* SEÇÃO 1: O PROJETO */}
     
       <section id="o-projeto">
