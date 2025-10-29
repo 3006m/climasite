@@ -65,7 +65,6 @@ export default function Projeto() {
         <h1>A Solução</h1>
         <div>
           <p className="simulacao-text">
-            william
             Para resolver esse problema, o projeto usa o ESP32 junto com os
             sensores DHT11 e MQ2. O DHT11 mede a temperatura e a umidade,
             enquanto o MQ2 detecta gases tóxicos. Todos os dados são enviados
