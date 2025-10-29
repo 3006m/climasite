@@ -1,8 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
-
+import Navbar from "../components/navbar";
+import Footer from "../components/footer";
 import "../styles/css.css"; // Importe seu arquivo CSS (ajuste o caminho)
 
 import img2 from "../assets/img2.jpeg";

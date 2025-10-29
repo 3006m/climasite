@@ -1,7 +1,7 @@
 // Simulacao.jsx
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Navbar from '../components/navbar';
+import Footer from '../components/footer';
 import Print from '../assets/DesafioClima.png'
 import '../styles/css.css';
 
@@ -20,7 +20,7 @@ export default function Simulacao() {
           className="simulacao-img"
         />
 
-        
+
         <p className="simulacao-text">
           Esta simulação foi criada utilizando a plataforma Wokwi, que permite testar
           projetos com microcontroladores como o ESP32, sensores e atuadores em tempo real.
